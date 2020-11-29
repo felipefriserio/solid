@@ -84,7 +84,7 @@ public List<Pagamento> getPagamentos(){
 ```
 Desta forma, caso alguém tente incluir   um pagamento na fatura via o getPagamentos será lançada uma exceção
 
-## Liskov Substitutive Principle
+## Liskov Substitutive Principle (LSP)
 Por que fazer bom uso da herança é difícil? <br>
 R: Porque para se fazer bom uso de herança, o desenvolvedor deve pensar em cada método que a classe filha herdou e sobrescreveu, e lembrar que as pré-condições não podem ser apertadas, e as pós-condições não podem serem afrouxadas.
 Isso não é tão simples, e requer muito raciocínio do desenvolvedor, sempre que for reescrever um comportamento.

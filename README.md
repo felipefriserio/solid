@@ -4,8 +4,8 @@ Projeto de estudo do curso de Solid Java da Alura
 # SOLID
 S - Single Responsibility <br>
 O - Open/Closed Principle <br>
-L - Liskov Substitution <br>
-I - Interface Segregation <br>
+L - Liskov Substitutive Principle <br>
+I - Interface Segregation Principle<br>
 D - Dependency Inversion <br>
 
 ## Single Responsibility - Coesão e Acoplamento
@@ -34,7 +34,7 @@ Agora, para alterar o comportamento da calculadora, basta passarmos uma implemen
 - Depender sempre de abstrações, nunca depender de implementações
 
 ### Encapsulamento 
-- Sinal que uma classe está mal encapsulada, perceba que ela sabe demais do comportamento de uma outra classe .
+- Sinal que uma classe está mal encapsulada, perceba que ela sabe demais do comportamento de uma outra classe
 ```java
 NotaFiscal nf = new NotaFiscal();
 double valor;
@@ -54,8 +54,8 @@ A regra está escondida dentro da NotaFiscal, caso seja preciso alterar alguma c
 Esse é o princípio do "Tell, do not ask". Diga o que fazer, não pergunte em diversas partes do sistema com ifs
 
 - Como descobrir se um código está bem encapsulado. Se faça 2 perguntas : 
-1- O quê o método faz?<br> R: Sabemos o que o método faz pelo seu nome
-2- Como ele faz?<br> R:Não sabemos qual sua implementação, ela está escondia, está encapsulada.
+<br>1- O quê o método faz?<br> R: Sabemos o que o método faz pelo seu nome
+<br>2- Como ele faz?<br> R:Não sabemos qual sua implementação, ela está escondia, está encapsulada.<br>
 
 O que ganhamos escondendo a implementação?<br>
 R: Trocando o comportamento da implementação, os clientes não serão afetados. Precisamos realizar a alteração em um único ponto do sistema
@@ -85,8 +85,23 @@ public List<Pagamento> getPagamentos(){
 Desta forma, caso alguém tente incluir   um pagamento na fatura via o getPagamentos será lançada uma exceção
 
 ## Liskov Substitutive Principle
--
+Por que fazer bom uso da herança é difícil? <br>
+R: Porque para se fazer bom uso de herança, o desenvolvedor deve pensar em cada método que a classe filha herdou e sobrescreveu, e lembrar que as pré-condições não podem ser apertadas, e as pós-condições não podem serem afrouxadas.
+Isso não é tão simples, e requer muito raciocínio do desenvolvedor, sempre que for reescrever um comportamento.
+<br>
+Qual a alternativa para se reaproveitar comportamento, sem fazer uso de herança?<br>
+R: Você pode fazer uso de composição para reaproveitar comportamentos. Diferente da herança, ao compor um objeto, você não precisa se preocupar com as pré e pós condições.
+No entanto, ao fazer uso de herança, você ganha o uso de polimorfismo. Quando bem usada, a herança também é uma excelente opção. 
+
+## Interface Segregation Principle (ISP)
+Afirma que nenhum cliente deve ser forçado a depender de métodos que não utilize. ISP divide interfaces que são muito grandes em menores e mais específicas, para que os clientes só necessitem saber sobre os métodos que são de interesse para eles.
+
+Quais são as vantagens de fazer com que classes dependam apenas de métodos que precisam?<br>
+R: Novamente, é propagação de mudanças. Se a interface mudar, a mudança tende a ser propagada em menos pontos.
+
+## Dependency Inversion Principle (DIP)
+- Ideia de sempre depender de classes/ módulos mais estáveis
+- Dependa de abstrações e não de implementações
+- A própria abstração depender de outras abstrações
 
 
-## Interface Segregation
-## Dependency Inversion
